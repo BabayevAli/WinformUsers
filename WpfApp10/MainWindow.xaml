@@ -1,0 +1,135 @@
+﻿<Window x:Class="WpfApp10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="770" Width="1080">
+    <Window.Resources>
+        <Style x:Key="BlackAndWhite">
+            <Setter Property="Control.FontSize" Value="18" />
+        </Style>
+        <Style x:Key="BlackAndWhite1">
+            <Setter Property="Control.FontSize" Value="24" />
+            <Setter Property="Control.Foreground" Value="White" />
+            <Setter Property="Control.Margin" Value="10,5,0,0" />
+        </Style>
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <Grid Background="Gray" DockPanel.Dock="Top" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Menu>
+                <MenuItem Style="{StaticResource BlackAndWhite}" Header="Menu Items">
+                    <MenuItem Style="{StaticResource BlackAndWhite}"  Header="Open Xml"/>
+                </MenuItem>
+                <MenuItem Style="{StaticResource BlackAndWhite}" Header="Student Info">
+                    <MenuItem Style="{StaticResource BlackAndWhite}" Header="Add"/>
+                    <MenuItem Style="{StaticResource BlackAndWhite}" Header="Delete"/>
+                    <MenuItem Style="{StaticResource BlackAndWhite}" Header="Update"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource BlackAndWhite}" Margin="505,0,0,0" Width="100">
+                    Add
+                </Button>
+                <Button Style="{StaticResource BlackAndWhite}" Width="100">
+                    Delete
+                </Button>
+                <Button Style="{StaticResource BlackAndWhite}" Width="100">
+                    Update
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ProgressBar Name="ProgressBarBottomLoadFiles" Height="30" Width="400" HorizontalAlignment="Left"></ProgressBar>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite}" Margin="190,3,0,0">Count:</TextBlock>
+                <TextBlock Name="Counts" Width="100"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <StackPanel DockPanel.Dock="Left" Width="250" Background="OrangeRed">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Name:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Name'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Surname:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Surname'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Telephone:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Telephone'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">IdNumber:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.IdNumber'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Age:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Age'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Gender:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Gender'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Status:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Status'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">SigupDate:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.SigupDate'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Liked:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Liked'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Disliked:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Disliked'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Posts:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Posts'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Following:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Following'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Follower:</TextBlock>
+                <TextBlock Text="{Binding ElementName=listboxusers , Path='SelectedItem.Follower'}" Style="{StaticResource BlackAndWhite1}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Style="{StaticResource BlackAndWhite1}">Image:</TextBlock>
+                <Image Source="{Binding ElementName=listboxusers , Path='SelectedItem.ImagePath'}" Height="150" ></Image>
+            </StackPanel>
+        </StackPanel>
+       
+        <WrapPanel Name="Wrp"  Background="Blue" >
+            <WrapPanel.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Refresh"></MenuItem>
+                </ContextMenu>
+            </WrapPanel.ContextMenu>
+            <ListBox Name="listboxusers" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="{Binding Path=ImagePath}" Width="100" Height="100"></Image>
+                            <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                            <TextBlock Text="{Binding Path=Surname}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+             
+            </ListBox>
+        </WrapPanel>
+    </DockPanel>
+</Window>
